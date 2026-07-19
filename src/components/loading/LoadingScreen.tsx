@@ -6,34 +6,28 @@ import styles from './LoadingScreen.module.css';
 
 interface LoadingScreenProps {
   onComplete: () => void;
-  isSceneReady?: boolean;
+  isSceneReady?: boolean; // Kept for backwards compatibility if passed from ClientPage
 }
 
-export default function LoadingScreen({ onComplete, isSceneReady = true }: LoadingScreenProps) {
+export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
   const [progress, setProgress] = useState(0);
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
-    const duration = 3500; // ~3.5 seconds minimum
+    const duration = 2500; // ~2.5 seconds minimum (reverted to faster)
     const steps = 60;
     const increment = 100 / steps;
     const interval = duration / steps;
     let current = 0;
 
     const timer = setInterval(() => {
-      // If we are at 99% but the scene isn't ready, pause here
-      if (current >= 99 && !isSceneReady) {
-        setProgress(99);
-        return;
-      }
-
       current += increment;
       // Add slight randomness for realism
       const jitter = Math.random() * 2;
-      const newProgress = Math.min(isSceneReady ? 100 : 99, current + jitter);
+      const newProgress = Math.min(100, current + jitter);
       setProgress(Math.round(newProgress));
 
-      if (current >= 100 && isSceneReady) {
+      if (current >= 100) {
         clearInterval(timer);
         setProgress(100);
         // Small delay before fade out
@@ -46,7 +40,7 @@ export default function LoadingScreen({ onComplete, isSceneReady = true }: Loadi
     }, interval);
 
     return () => clearInterval(timer);
-  }, [isSceneReady, onComplete]);
+  }, [onComplete]);
 
   const handleExitComplete = useCallback(() => {
     onComplete();
