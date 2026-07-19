@@ -1,0 +1,222 @@
+.heroSection {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.sceneWrapper {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.gradientOverlays {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.gradientBottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(to top, var(--color-bg), rgba(5, 5, 16, 0.5), transparent);
+}
+
+.gradientTop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 8rem;
+  background: linear-gradient(to bottom, rgba(5, 5, 16, 0.3), transparent);
+}
+
+.gradientLeft {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 8rem;
+  background: linear-gradient(to right, rgba(5, 5, 16, 0.4), transparent);
+}
+
+.gradientRight {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 8rem;
+  background: linear-gradient(to left, rgba(5, 5, 16, 0.4), transparent);
+}
+
+.contentOverlay {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: stretch; /* Stretch to fill height */
+  padding-top: 6rem; /* Space for navbar */
+  padding-bottom: 5rem; /* Space for scroll indicator */
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  pointer-events: none;
+}
+
+.contentContainer {
+  width: 100%;
+  max-width: 64rem;
+  height: 100%; /* Stretch to fill overlay so space-between works */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.topSection, .bottomSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.topSection {
+  gap: 1.5rem;
+}
+
+.bottomSection {
+  /* No gap here, rely on margin-top of buttons/timer */
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+.char {
+  display: inline-block;
+}
+
+.subtitleContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.subtitleText {
+  font-size: 1.125rem;
+  color: var(--color-text-muted);
+  font-weight: 500;
+  letter-spacing: 0.025em;
+}
+@media (min-width: 768px) {
+  .subtitleText {
+    font-size: 1.25rem;
+  }
+}
+
+.universityText {
+  font-size: 0.875rem;
+  color: var(--color-text-subtle);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+@media (min-width: 768px) {
+  .universityText {
+    font-size: 1rem;
+  }
+}
+
+.tagline {
+  font-size: 1.25rem;
+  margin-top: 0.5rem;
+}
+@media (min-width: 768px) {
+  .tagline {
+    font-size: 1.5rem;
+  }
+}
+
+.ctaContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  pointer-events: auto;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+}
+@media (min-width: 768px) {
+  .ctaContainer {
+    gap: 2rem;
+  }
+}
+
+.icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.timerContainer {
+  pointer-events: auto;
+  margin-top: 2rem;
+}
+
+.scrollIndicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.scrollContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.scrollText {
+  font-size: 0.75rem;
+  color: var(--color-text-subtle);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.scrollIcon {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: var(--color-primary);
+}
+
+.loadingWrapper {
+  position: absolute;
+  inset: 0;
+  background-color: var(--color-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinner {
+  width: 2rem;
+  height: 2rem;
+  border: 2px solid var(--color-primary);
+  border-top-color: transparent;
+  border-radius: 9999px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

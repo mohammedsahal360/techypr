@@ -1,0 +1,88 @@
+.base {
+  position: relative;
+  border-radius: 9999px;
+  padding: 0.875rem 2rem;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.875rem;
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  overflow: hidden;
+}
+
+.variantFilled {
+  background-color: var(--color-primary);
+  color: white;
+  border: 1px solid transparent;
+  box-shadow: 0 0 20px rgba(124,58,237,0.4), 0 0 60px rgba(124,58,237,0.15);
+}
+.variantFilled:hover {
+  box-shadow: 0 0 30px rgba(124,58,237,0.6), 0 0 80px rgba(124,58,237,0.25);
+}
+
+.variantOutline {
+  background-color: transparent;
+  color: white;
+  border: 1px solid transparent;
+}
+
+.variantGhost {
+  background-color: transparent;
+  color: rgba(255,255,255,0.8);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+.variantGhost:hover {
+  background-color: rgba(255,255,255,0.05);
+  color: white;
+}
+
+.neonBorderBg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.outlineInner {
+  position: absolute;
+  inset: 2px;
+  z-index: 0;
+  border-radius: 9999px;
+  background-color: var(--color-bg);
+  transition: background-color 0.3s ease;
+}
+.base:hover .outlineInner {
+  background-color: rgba(5, 5, 16, 0.8);
+}
+
+.filledHoverBg {
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background: linear-gradient(to right, var(--color-primary), var(--color-secondary), var(--color-accent));
+  opacity: 0;
+  z-index: 0;
+}
+
+.contentWrapper {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  pointer-events: none;
+}
+
+.icon {
+  font-size: 1.125rem;
+  flex-shrink: 0;
+}
+
+.text {
+  white-space: nowrap;
+}

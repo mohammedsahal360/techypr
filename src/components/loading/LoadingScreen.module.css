@@ -1,0 +1,94 @@
+.container {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-bg);
+  overflow: hidden;
+}
+
+.ambientGlowContainer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.ambientGlow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background-color: rgba(124, 58, 237, 0.05); /* primary/5 */
+  filter: blur(120px);
+}
+
+.glitchContainer {
+  position: relative;
+  margin-bottom: 3rem;
+  user-select: none;
+}
+
+.glitchText {
+  color: var(--color-text);
+  font-family: var(--font-heading);
+  letter-spacing: -0.05em;
+  font-size: clamp(2rem, 6vw, 5rem);
+  font-weight: 800;
+  line-height: 0.95;
+}
+
+.glitchLayer {
+  position: absolute;
+  inset: 0;
+  opacity: 0.8;
+}
+
+.progressContainer {
+  width: 16rem; /* w-64 */
+  position: relative;
+}
+
+@media (min-width: 640px) {
+  .progressContainer {
+    width: 20rem; /* sm:w-80 */
+  }
+}
+
+.progressBarBackground {
+  height: 2px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.progressBarFill {
+  height: 100%;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, #7C3AED, #A855F7, #FF4DFF);
+}
+
+.progressGlow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 1rem;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, transparent, rgba(124, 58, 237, 0.6), transparent);
+  filter: blur(6px);
+}
+
+.percentageText {
+  margin-top: 1rem;
+  text-align: center;
+  font-family: var(--font-heading);
+  font-size: 0.875rem;
+  letter-spacing: 0.3em;
+  color: var(--color-text-muted);
+}

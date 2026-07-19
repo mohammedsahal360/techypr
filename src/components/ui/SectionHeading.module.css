@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 5rem;
+}
+.alignCenter {
+  text-align: center;
+  align-items: center;
+}
+.alignLeft {
+  text-align: left;
+  align-items: flex-start;
+}
+.accentBar {
+  height: 0.25rem;
+  width: 4rem;
+  border-radius: 9999px;
+  background: linear-gradient(to right, var(--color-primary), var(--color-accent), var(--color-secondary));
+}
+.subtitle {
+  color: var(--color-text-muted);
+}
+.heading {
+  /* Using global classes for heading-lg and gradient-text */
+}

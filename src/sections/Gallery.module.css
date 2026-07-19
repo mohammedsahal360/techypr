@@ -1,0 +1,29 @@
+.cardWrapper { position: relative; overflow: hidden; border-radius: 1rem; cursor: pointer; }
+.cardHeight64 { height: 16rem; }
+.cardHeight72 { height: 18rem; }
+.cardHeight80 { height: 20rem; }
+.bgPlaceholder { position: absolute; inset: 0; transition: transform 0.7s; }
+.cardWrapper:hover .bgPlaceholder { transform: scale(1.1); }
+.patternOverlay { position: absolute; inset: 0; opacity: 0.3; }
+.centerIconWrapper { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+.centerIcon { font-size: 3.75rem; opacity: 0.2; transition: opacity 0.5s; }
+.cardWrapper:hover .centerIcon { opacity: 0.4; }
+.holographicOverlay { position: absolute; inset: 0; pointer-events: none; }
+.holographicGradient { position: absolute; inset: 0; background-image: linear-gradient(to top, rgba(124, 58, 237, 0.6), rgba(124, 58, 237, 0.2), transparent); }
+.scanlinesOverlay { position: absolute; inset: 0; }
+.contentWrapper { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 1.5rem; }
+.category { font-size: 0.75rem; font-family: monospace; color: var(--color-accent); text-transform: uppercase; letter-spacing: 0.05em; }
+.title { font-family: var(--font-heading); font-weight: 700; font-size: 1.125rem; color: white; margin-top: 0.25rem; }
+.section { position: relative; padding: 8rem 0; overflow: hidden; }
+.bgWrapper { position: absolute; inset: 0; pointer-events: none; }
+.bgGlow { position: absolute; bottom: 0; left: 25%; width: 600px; height: 600px; background-color: rgba(255, 77, 255, 0.05); border-radius: 9999px; filter: blur(200px); }
+.container { position: relative; z-index: 10; }
+.masonry { column-count: 1; column-gap: 1.5rem; margin-top: 4rem; }
+@media (min-width: 640px) { .masonry { column-count: 2; } }
+@media (min-width: 1024px) { .masonry { column-count: 3; } }
+.masonryItem { break-inside: avoid; margin-bottom: 1.5rem; }
+.gradient0 { background-image: linear-gradient(to bottom right, rgba(147, 51, 234, 0.3), rgba(37, 99, 235, 0.3)); }
+.gradient1 { background-image: linear-gradient(to bottom right, rgba(219, 39, 119, 0.3), rgba(147, 51, 234, 0.3)); }
+.gradient2 { background-image: linear-gradient(to bottom right, rgba(37, 99, 235, 0.3), rgba(8, 148, 166, 0.3)); }
+.gradient3 { background-image: linear-gradient(to bottom right, rgba(124, 58, 237, 0.3), rgba(217, 70, 239, 0.3)); }
+.gradient4 { background-image: linear-gradient(to bottom right, rgba(79, 70, 229, 0.3), rgba(147, 51, 234, 0.3)); }

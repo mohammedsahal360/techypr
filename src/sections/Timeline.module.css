@@ -1,0 +1,218 @@
+.timelineSection {
+  position: relative;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+  overflow: hidden;
+}
+
+.bgEffects {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.blurCircle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background-color: rgba(255, 77, 255, 0.05);
+  border-radius: 9999px;
+  filter: blur(200px);
+}
+
+.timelineContainer {
+  position: relative;
+  margin-top: 4rem;
+  max-width: 56rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.verticalLineDesktop {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background-color: var(--color-border);
+  transform: translateX(-50%);
+  display: none;
+}
+@media (min-width: 768px) {
+  .verticalLineDesktop {
+    display: block;
+  }
+}
+
+.animatedLine {
+  width: 100%;
+  background-image: linear-gradient(to bottom, var(--color-primary), var(--color-accent), var(--color-primary));
+}
+
+.verticalLineMobile {
+  position: absolute;
+  left: 10px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background-color: var(--color-border);
+}
+@media (min-width: 768px) {
+  .verticalLineMobile {
+    display: none;
+  }
+}
+
+.itemsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.timelineNode {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nodeEven {
+}
+@media (min-width: 768px) {
+  .nodeEven {
+    flex-direction: row;
+  }
+}
+
+.nodeOdd {
+}
+@media (min-width: 768px) {
+  .nodeOdd {
+    flex-direction: row-reverse;
+  }
+}
+
+.contentWrapper {
+  flex: 1;
+  padding-left: 3rem;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .contentWrapper {
+    padding-left: 0;
+  }
+}
+
+.contentEven {
+}
+@media (min-width: 768px) {
+  .contentEven {
+    text-align: right;
+  }
+}
+
+.contentOdd {
+}
+@media (min-width: 768px) {
+  .contentOdd {
+    text-align: left;
+  }
+}
+
+.contentCard {
+  border-radius: 1rem;
+  padding: 2rem;
+  display: inline-block;
+  max-width: 100%;
+  width: 100%;
+  transition: all 300ms;
+}
+@media (min-width: 768px) {
+  .contentCard {
+    max-width: 28rem;
+    width: auto;
+  }
+}
+
+.timelineNode:hover .contentCard {
+  border-color: rgba(124, 58, 237, 0.3);
+}
+
+.timeContainer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.dayBadge {
+  font-size: 0.75rem;
+  font-family: monospace;
+  color: var(--color-primary-light);
+  background-color: rgba(124, 58, 237, 0.1);
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.timeText {
+  font-size: 0.875rem;
+  font-family: monospace;
+  color: var(--color-accent);
+}
+
+.title {
+  font-family: var(--font-heading), system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 1.125rem;
+  color: white;
+  margin-bottom: 0.5rem;
+  transition: color 300ms;
+}
+.timelineNode:hover .title {
+  color: var(--color-primary-light);
+}
+
+.description {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  line-height: 1.625;
+}
+
+.centerNodeWrapper {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+@media (min-width: 768px) {
+  .centerNodeWrapper {
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none;
+    flex-shrink: 0;
+  }
+}
+
+.centerNode {
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 9999px;
+  border: 2px solid var(--color-primary);
+  background-color: var(--color-bg);
+}
+
+.spacer {
+  flex: 1;
+  display: none;
+}
+@media (min-width: 768px) {
+  .spacer {
+    display: block;
+  }
+}

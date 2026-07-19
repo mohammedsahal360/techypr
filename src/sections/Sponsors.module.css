@@ -1,0 +1,19 @@
+.cardWrapper { flex-shrink: 0; margin-left: 1rem; margin-right: 1rem; }
+.card { border-radius: 0.75rem; padding: 2.5rem; width: 13rem; height: 9rem; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem; transition: all 0.5s; border: 1px solid transparent; }
+.cardWrapper:hover .card { transform: scale(1.1); border-color: rgba(124, 58, 237, 0.4); box-shadow: 0 0 30px rgba(124, 58, 237, 0.2); }
+.sponsorName { font-size: 1.5rem; font-family: var(--font-heading); font-weight: 700; background-clip: text; -webkit-background-clip: text; color: transparent; }
+.tierPlatinum { background-image: linear-gradient(to right, #c084fc, #60a5fa); }
+.tierGold { background-image: linear-gradient(to right, #facc15, #f59e0b); }
+.tierSilver { background-image: linear-gradient(to right, #d1d5db, #9ca3af); }
+.tierBronze { background-image: linear-gradient(to right, #fb923c, #d97706); }
+.sponsorTier { font-size: 0.75rem; color: var(--color-text-subtle); text-transform: uppercase; letter-spacing: 0.05em; }
+.marqueeContainer { position: relative; overflow: hidden; padding: 1.5rem 0; }
+.marqueeContent { display: flex; }
+.section { position: relative; padding: 8rem 0; overflow: hidden; }
+.bgWrapper { position: absolute; inset: 0; pointer-events: none; }
+.bgGlow { position: absolute; top: 0; right: 0; width: 500px; height: 500px; background-color: rgba(59, 130, 246, 0.05); border-radius: 9999px; filter: blur(200px); }
+.container { position: relative; z-index: 10; }
+.marquees { margin-top: 4rem; display: flex; flex-direction: column; gap: 2rem; }
+.marqueeRowWrapper { position: relative; }
+.fadeLeft { position: absolute; left: 0; top: 0; bottom: 0; width: 8rem; background-image: linear-gradient(to right, var(--color-bg), transparent); z-index: 10; pointer-events: none; }
+.fadeRight { position: absolute; right: 0; top: 0; bottom: 0; width: 8rem; background-image: linear-gradient(to left, var(--color-bg), transparent); z-index: 10; pointer-events: none; }
